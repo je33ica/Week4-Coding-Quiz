@@ -27,6 +27,11 @@ let questions = [
       choices: ["<div>", "<script>", "<container>", "<head>"],
       answer: "<script>",
     },
+    {
+        question: "Which of these is NOT a JavaScript datatype?",
+        choices: ["Number", "String", "Boolean", "Float"],
+        answer: "Float",
+      },
   ];
 
   var homeScreen = document.getElementById("home");
@@ -104,7 +109,7 @@ function showQuestions() {
 
   function endQuiz() {
  
-   
+    clearInterval(countdown);
     scoreDisplay.style.display = "block";
     homeScreen.style.display = "none";
     questionsContainer.style.display = "none";
