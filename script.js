@@ -28,3 +28,26 @@ let questions = [
       answer: "<script>",
     },
   ];
+
+  var homeScreen = document.getElementById("home");
+  var playGameButton = document.getElementById("playGame");
+  var answersOptions = document.getElementById("choice-container");
+  var questionsContainer = document.getElementById("questions-container");
+  var scoreDisplay = document.getElementById("score");
+  var initialsInput = document.getElementById("user-input");
+  var initials = document.getElementById("initials");
+  var highScoresTitle = document.getElementById("high-scores-title");
+  var highScoresList = document.querySelector(".high-scores");
+  var restartBtn = document.getElementById("restart-quiz-button");
+  var saveScore = document.getElementById("submit");
+  var scoresList = document.getElementById("scoresList")
+  var timer = document.getElementById("timer")
+
+questionsContainer.style.display = "none";
+scoreDisplay.style.display = "none";
+restartBtn.style.display = "none";
+
+var currentQuestionIndex = 0;
+var userScore = 0;
+var timeRemaining = 60; 
+var countdown; 
