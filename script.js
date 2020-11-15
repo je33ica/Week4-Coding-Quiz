@@ -51,3 +51,18 @@ var currentQuestionIndex = 0;
 var userScore = 0;
 var timeRemaining = 60; 
 var countdown; 
+
+playGameButton.onclick = startGame;
+
+//starts the quiz
+function startGame() {
+    // adding 'none' to the homeScreen hides it from view- setting "block" is returning the element to its original setting
+    homeScreen.style.display = "none";
+    highScoresTitle.style.display = "none";
+    scoresList .style.display = "none";
+  
+    questionsContainer.style.display = "block";
+    
+    showQuestions();
+}
+  
