@@ -93,3 +93,12 @@ function showQuestions() {
       answersOptions.appendChild(choiceButton);
     });
   }
+
+  function endQuiz() {
+ 
+   
+    scoreDisplay.style.display = "block";
+    homeScreen.style.display = "none";
+    questionsContainer.style.display = "none";
+    highScoresTitle.style.display = "block";
+    
