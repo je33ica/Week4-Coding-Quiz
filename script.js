@@ -54,6 +54,16 @@ var countdown;
 
 playGameButton.onclick = startGame;
 
+var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
+if (savedHighScores.length > 0){
+  savedHighScores.forEach(function(score){
+    var scoreListEntry = document.createElement("li");
+    scoreListEntry.textContent = "User: "+ score.initials + "Score:" + score.score; 
+      scoresList.appendChild(scoreListEntry);
+  })
+
+}
+
 //starts the quiz
 function startGame() {
     // adding 'none' to the homeScreen hides it from view- setting "block" is returning the element to its original setting
