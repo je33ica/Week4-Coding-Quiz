@@ -1,0 +1,55 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  </li>
+  <title>Quiz</title>
+</head>
+
+<body>
+  <div class="container" id="home">
+    <div class="flex-center flex-column">
+      <h1>Test your code</h1>
+      <h3>Welcome to the quiz. You will have 60 seconds to answer 5 questions</h3>
+      <a class="btn" id="playGame">play</a>
+    </div>
+  </div>
+
+  <div class="container" id="questions-container">
+    <div id="game" class="justify-center">
+      <h3 id="timer"></h3>
+      <h2 id="question">Answer this question!</h2>
+      <h3 id="question-asked"></h3>
+      <div id="choice-container"> </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="flex-center flex-column">
+      <form id="score">
+        <h3 id="user-input">Your score</h3>
+        <p>Enter your initials</p>
+        <input type="text" id="initials" name="initials" />
+        <br>
+        <button class="btn" id="submit" type="submit"> Submit </button>
+    </div>
+
+    <div class="high-score-div">
+      <h3 id="high-scores-title">High Scores</h3>
+      <ol id="scoresList" class="high-scores"></ol>
+    </div>
+
+    <button id="restart-quiz-button" type="button" class="btn"> Try again?</button>
+    </form>
+    
+  </div>
+
+
+
+</body>
+<script src="script.js"></script>
+
+</html>
