@@ -62,7 +62,24 @@ function startGame() {
     scoresList .style.display = "none";
   
     questionsContainer.style.display = "block";
-    
+
     showQuestions();
 }
   
+
+function showQuestions() {
+    //shows questions
+    var questionAsked = document.getElementById("question-asked");
+    questionAsked.textContent = questions[currentQuestionIndex].question;
+    answersOptions.innerHTML = "";
+    // creates choices for user
+    var choices = questions[currentQuestionIndex].choices;
+    choices.forEach(function (choice) {
+      var choiceButton = document.createElement("button");
+      choiceButton.setAttribute("class", "answerOption");
+      choiceButton.setAttribute("value", choice);
+      choiceButton.textContent = choice;
+      choiceButton.onclick = answerClick;
+      answersOptions.appendChild(choiceButton);
+    });
+  }
