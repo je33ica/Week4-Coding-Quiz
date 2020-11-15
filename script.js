@@ -73,6 +73,14 @@ function startGame() {
   
     questionsContainer.style.display = "block";
 
+    countdown = setInterval(function(){
+        timeRemaining--;
+        timer.textContent = timeRemaining;
+        if(timeRemaining <= 0){
+          endQuiz();
+        }
+      }, 1000)
+
     showQuestions();
 }
   
@@ -113,4 +121,19 @@ function showQuestions() {
       savedHighScores.push(usersScoreInput);
       localStorage.setItem("highScore", JSON.stringify(savedHighScores));
     };
+  }
+
+  function answerClick() {
+    if (this.value === questions[currentQuestionIndex].answer) {
+      userScore++;
+    } else {
+      timeRemaining -= 10;
+      timer.textContent = timeRemaining; 
+    }
+    currentQuestionIndex++;
+    if (currentQuestionIndex === questions.length) {
+      endQuiz();
+    } else {
+      showQuestions();
+    }
   }
