@@ -1,0 +1,168 @@
+:root{
+    background-color: rgb(221, 221, 221);
+    /*Using the rem system for sizing fonts making it more acesible and easier to control forn size overall*/
+    font-size: 62.5%x;
+
+}
+
+*{
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    color:rgb(7, 34, 7);
+   
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 1rem;
+}
+
+h1{
+    /*5.4 rem is 10 pixels(root font size) x 5.4 = 54 */
+   font-size: 5.4rem;
+   color: rgb(7, 34, 7);
+   margin-bottom: 5rem; 
+}
+
+h1 > span{
+    font-size: 4.2rem;
+    font-weight: 500;
+}
+
+h2{
+    font-size: 4.2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+h3{
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-align: center;
+
+}
+li{
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+
+/*Utilities*/
+.container {
+    /*Allows the screen to resize, if it gets bigger there is some padding: ;*/
+    width: 100vw;
+    height: auto;
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    /* will center things horizontially utilising flex*/
+    justify-content: center;
+    /* will center things vertically utilising flex*/
+    align-items: center;
+    /* space around elements in container*/
+    padding: 2rem;
+
+   
+}
+/* the '*' selects all elments and when used on the .container with '>' it will select all of it's children*/
+.container > * {
+    width 100%;
+}  
+/* chnages the to vertical as the default is horizontal- stack things on top of each other */
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.flex-center{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.justify-center{
+    justify-content: center;
+
+}
+.text-center{
+    text-align: center;
+}
+/*Will hide things if we need too*/
+.hidden{
+    display: none;
+}
+
+/* BUTTONS  being applied to anchor tag to make it look like a button */
+
+.btn {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid rgb(183, 199, 183);
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(7, 34, 7);
+    background-color: white;
+
+  }
+  /* creates a drop shadow on the button when the pointer hovers*/
+  .btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(51, 129, 64, 0.5);
+    /*moves the box slighlty*/ 
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+   
+/* css styling for Q&A*/
+
+.answerOption{
+    display: flex;
+    /*continuing to use the rem method for sizing objects */
+    margin-bottom:  0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(183, 199, 183);
+    background-color: whitesmoke;
+   
+    padding: 1.5rem;
+    
+}
+.answerOption:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(51, 129, 64, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+ 
+
+/* FORMS */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 rgba(51, 129, 64, 0.5);
+    text-align: center;
+  }
+  /* changes the colour to a loghter colour to encourage it as a input field */
+
+  input::placeholder {
+    color: #aaa;
+  }
+  
