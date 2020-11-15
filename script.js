@@ -102,3 +102,15 @@ function showQuestions() {
     questionsContainer.style.display = "none";
     highScoresTitle.style.display = "block";
     
+    var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
+
+    saveScore.onclick = function () {
+      var initalsValue = initials.value;
+      var usersScoreInput = {
+        score: userScore,
+        initials: initalsValue,
+      };
+      savedHighScores.push(usersScoreInput);
+      localStorage.setItem("highScore", JSON.stringify(savedHighScores));
+    };
+  }
