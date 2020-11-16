@@ -63,7 +63,7 @@ var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
 if (savedHighScores.length > 0){
   savedHighScores.forEach(function(score){
     var scoreListEntry = document.createElement("li");
-    scoreListEntry.textContent = "User: "+ score.initials + "Score:" + score.score; 
+    scoreListEntry.textContent = "User: "+ score.initials + ": " + score.score; 
       scoresList.appendChild(scoreListEntry);
   })
 
