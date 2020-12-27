@@ -10,3 +10,5 @@
   
   https://je33ica.github.io/Week4-Coding-Quiz/
   
+  <img width="201" alt="quiz" src="https://user-images.githubusercontent.com/67834752/103180088-77f28000-488a-11eb-86e1-80cd653f5b12.png">
+
