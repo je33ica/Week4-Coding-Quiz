@@ -62,10 +62,9 @@ playGameButton.onclick = startGame;
 
 
 var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
-//ordered the array before rendering to the page
-var orderScore =  savedHighScores.sort(function (a, b) {
-  return b.score - a.score;
-});
+//ordered the array before rendering to the
+var orderScore =  savedHighScores.sort ((a, b) => (b.score - a.score));
+
 if (orderScore.length > 0){
   orderScore.forEach(function(score){
     var scoreListEntry = document.createElement("li");
