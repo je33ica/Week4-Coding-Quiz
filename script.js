@@ -62,18 +62,19 @@ playGameButton.onclick = startGame;
 
 
 var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
-if (savedHighScores.length > 0){
-  savedHighScores.forEach(function(score){
+//ordered the array before rendering to the page
+var orderScore =  savedHighScores.sort(function (a, b) {
+  return b.score - a.score;
+});
+if (orderScore.length > 0){
+  orderScore.forEach(function(score){
     var scoreListEntry = document.createElement("li");
     scoreListEntry.textContent = "User: "+ score.initials + ": " + score.score; 
       scoresList.appendChild(scoreListEntry);
   })
 
 }
-var orderScore =  savedHighScores.sort(function (a, b) {
-  return b.score - a.score;
-  
-});
+
 console.log('the score ', orderScore);
 //starts the quiz
 function startGame() {
