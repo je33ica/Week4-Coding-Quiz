@@ -59,6 +59,8 @@ var countdown;
 
 playGameButton.onclick = startGame;
 
+
+
 var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
 if (savedHighScores.length > 0){
   savedHighScores.forEach(function(score){
@@ -68,7 +70,11 @@ if (savedHighScores.length > 0){
   })
 
 }
-
+var orderScore =  savedHighScores.sort(function (a, b) {
+  return b.score - a.score;
+  
+});
+console.log('the score ', orderScore);
 //starts the quiz
 function startGame() {
     // adding 'none' to the homeScreen hides it from view- setting "block" is returning the element to its original setting
@@ -115,7 +121,7 @@ function showQuestions() {
     questionsContainer.style.display = "none";
     highScoresTitle.style.display = "block";
     
-    var savedHighScores = JSON.parse(localStorage.getItem("highScore")) || [];
+    var orderScore = JSON.parse(localStorage.getItem("highScore")) || {};
 
     saveScore.onclick = function () {
       var initalsValue = initials.value;
@@ -123,10 +129,17 @@ function showQuestions() {
         score: userScore,
         initials: initalsValue,
       };
-      savedHighScores.push(usersScoreInput);
-      localStorage.setItem("highScore", JSON.stringify(savedHighScores));
-    };
+      orderScore.push(usersScoreInput);
+     localStorage.setItem("highScore", JSON.stringify(orderScore));
+     
+
+   };
   }
+  // let orderScore =  savedHighScores.sort(function (a, b) {
+  //   return b.score - a.score;
+  // });
+
+  
 
   function answerClick() {
     if (this.value === questions[currentQuestionIndex].answer) {
